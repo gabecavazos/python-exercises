@@ -1,0 +1,6 @@
+transaction_id,amount,transaction_type
+1,0,debit
+1,100.0,debit
+2,1000.0,credit
+3,100.0,debit
+4,100.0,debit
