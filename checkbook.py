@@ -8,6 +8,16 @@ transaction_id = 0
 cols = ['transaction_id','amount','transaction_type']
 transaction = {'transaction_id': 1,'amount':0,'transaction_type':'debit'}
 
+#********function to write csvs********
+def write_to_csv(file_name, fieldnames, transaction):
+    with open(file_name, 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow(transaction)
+
+#function to clear checkbook history
+def clear_checkbookpy_history():
+    write_to_csv('checkbookpy.csv', cols, transaction)
 
 #function to get balance
 def get_balance():
